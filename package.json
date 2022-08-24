@@ -10,8 +10,10 @@
     "dotenv": "^16.0.1"
   },
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "node dist/index",
     "dev": "nodemon index.ts"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
