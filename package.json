@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "Richard Xiong",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "axios": "^0.27.2",
     "discord.js": "^14.3.0",
