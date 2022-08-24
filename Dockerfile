@@ -4,5 +4,5 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN yarn
 COPY . .
-RUN tsc
+RUN npx tsc
 CMD ["yarn", "start"]
