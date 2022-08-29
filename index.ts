@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
 import { Client, Message, PartialMessage, Partials } from 'discord.js';
+import { vedantaPics } from './vedanta';
 
 config();
 
@@ -37,6 +38,12 @@ const handleMessage = async (message: Message | PartialMessage) => {
         content: `What a dog eater <@${message.author?.id}>`,
       });
     }
+  }
+  if (message.content === '/vedanta') {
+    message.delete();
+    message.channel.send(
+      vedantaPics[Math.floor(Math.random() * vedantaPics.length)],
+    );
   }
 };
 

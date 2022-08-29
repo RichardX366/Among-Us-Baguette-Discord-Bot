@@ -6,6 +6,7 @@
     "lib": ["esnext"],
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "target": "esnext"
+    "target": "esnext",
+    "module": "CommonJS"
   }
 }
