@@ -41,7 +41,10 @@ const handleMessage = async (message: Message | PartialMessage) => {
     }
   }
   if (message.content === '/vedanta') {
-    message.edit(vedantaPics[Math.floor(Math.random() * vedantaPics.length)]);
+    message.delete();
+    message.channel.send(
+      vedantaPics[Math.floor(Math.random() * vedantaPics.length)],
+    );
   }
 };
 
