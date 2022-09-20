@@ -43,5 +43,4 @@ jobs:
         url: ${{ secrets.ROUTER_URL }}
         method: 'POST'
         customHeaders: '{"Content-Type": "application/json"}'
-        data: |
-          '{"password": "${{ secrets.ROUTER_PASSWORD }}/manualAuthRefresh", "deployment": "among-us-baguette-bot"}'
+        data: '{"password": "${{ secrets.ROUTER_PASSWORD }}/manualAuthRefresh", "deployment": "among-us-baguette-bot"}'
