@@ -37,3 +37,11 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+    - name: Refresh Kubernetes
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: ${{ secrets.ROUTER_URL }}
+        method: 'POST'
+        customHeaders: '{"Content-Type": "application/json"}'
+        data: |
+          '{"password": "${{ secrets.ROUTER_PASSWORD }}/manualAuthRefresh", "deployment": "among-us-baguette-bot"}'

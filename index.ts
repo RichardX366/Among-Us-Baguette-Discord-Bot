@@ -24,7 +24,10 @@ client.on('ready', () => console.log('Ready!'));
 
 const handleMessage = async (message: Message | PartialMessage) => {
   if (message.author?.id === '942408016517533736') {
-    const content = message.content?.toUpperCase() || '';
+    const content =
+      (
+        await message.channel.messages.fetch(message.id)
+      ).content.toUpperCase() || '';
     if (
       content === 'L' ||
       content === 'LL' ||
@@ -34,16 +37,11 @@ const handleMessage = async (message: Message | PartialMessage) => {
       (content[0] === 'L' && content[1] === ' ')
     ) {
       message.delete();
-      message.channel.send({
-        content: `What a dog eater <@${message.author?.id}>`,
-      });
+      message.channel.send(`What a dog eater <@${message.author?.id}>`);
     }
   }
   if (message.content === '/vedanta') {
-    message.delete();
-    message.channel.send(
-      vedantaPics[Math.floor(Math.random() * vedantaPics.length)],
-    );
+    message.edit(vedantaPics[Math.floor(Math.random() * vedantaPics.length)]);
   }
 };
 
