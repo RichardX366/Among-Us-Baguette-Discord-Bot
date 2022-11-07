@@ -12,7 +12,7 @@ RUN yarn workspaces focus --production
 FROM pre-install as build
 RUN yarn --immutable
 COPY . .
-RUN yarn build-files
+RUN yarn build
 
 FROM pre-yarn as main
 COPY --from=prod-install /app/node_modules ./node_modules
