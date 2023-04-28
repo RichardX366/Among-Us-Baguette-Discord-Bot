@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  amongus:
+    container_name: amongus
+    image: 'registry.richardx.win/amongus:latest'
+    restart: unless-stopped
+    environment:
+      - DISCORD_TOKEN=$DISCORD_TOKEN
