@@ -6,3 +6,5 @@ services:
     restart: unless-stopped
     environment:
       - DISCORD_TOKEN=$DISCORD_TOKEN
+    labels:
+      - traefik.enable=true
