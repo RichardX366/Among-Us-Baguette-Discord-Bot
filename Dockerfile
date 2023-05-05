@@ -1,4 +1,4 @@
-FROM node:18-slim as pre-yarn
+FROM node:18-alpine as pre-yarn
 WORKDIR /app
 COPY package.json yarn.lock ./
 
